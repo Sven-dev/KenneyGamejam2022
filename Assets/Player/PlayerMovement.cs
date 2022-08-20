@@ -16,11 +16,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (MovingAllowed)
+        if (!MovingAllowed)
         {
-            Vector2 moveInput = InputManager.Input.Playercontrols.Move.ReadValue<Vector2>();
-            CalculateMovement(moveInput);
+            Movement = Vector3.zero;
+            return;
         }
+
+        Vector2 moveInput = InputManager.Input.Playercontrols.Move.ReadValue<Vector2>();
+        CalculateMovement(moveInput);
     }
 
     private void FixedUpdate()

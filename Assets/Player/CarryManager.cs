@@ -13,7 +13,7 @@ public class CarryManager : MonoBehaviour
     [SerializeField] private List<Transform> Carryables = new List<Transform>();
     private Transform CarriedItem;
 
-    private void Start()
+    private void Awake()
     {
         InputManager.Input.Playercontrols.Carry.started += CalculatePickupDistance;
     }
@@ -80,10 +80,11 @@ public class CarryManager : MonoBehaviour
             {
                 CS.RemoveStone(item);
             }
-            else if (item.CompareTag("Shovel"))
-            {
-                GetComponent<GraveDigger>().DigAllowed = true;
-            }
+        }
+
+        if (item.CompareTag("Shovel"))
+        {
+            GraveDigger.Instance.DigAllowed = true;
         }
 
         item.parent = CarryPivot;
@@ -103,7 +104,7 @@ public class CarryManager : MonoBehaviour
         Carrying = false;
         if (CarriedItem.CompareTag("Shovel"))
         {
-            GetComponent<GraveDigger>().DigAllowed = false;
+            GraveDigger.Instance.DigAllowed = false;
         }
 
         CarriedItem.position = new Vector3(Mathf.Round(DropPivot.position.x), Mathf.Round(DropPivot.position.y), Mathf.Round(DropPivot.position.z));
