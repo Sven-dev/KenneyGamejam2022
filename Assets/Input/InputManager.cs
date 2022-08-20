@@ -11,4 +11,14 @@ public class InputManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         Input = new Input();
     }
+
+    private void OnEnable()
+    {
+        Input.Playercontrols.Enable();
+    }
+
+    private void OnDisable()
+    {
+        Input.Playercontrols.Disable();
+    }
 }

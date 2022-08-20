@@ -11,16 +11,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 Movement = Vector3.zero;
 
-    private void OnEnable()
-    {
-        InputManager.Input.Playercontrols.Enable();
-    }
-
-    private void OnDisable()
-    {
-        InputManager.Input.Playercontrols.Disable();
-    }
-
     private void Update()
     {
         Vector2 moveInput = InputManager.Input.Playercontrols.Move.ReadValue<Vector2>();

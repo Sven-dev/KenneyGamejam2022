@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3352480658506592726}
   - component: {fileID: 1813188067337977459}
   - component: {fileID: 4525356459100785337}
-  m_Layer: 0
+  - component: {fileID: 202276339931695839}
+  m_Layer: 7
   m_Name: ironFence1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &202276339931695839
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2724035423882406764}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999999, y: 1.6478, z: 0.19999999}
+  m_Center: {x: 0, y: 0.8239, z: -0.9}

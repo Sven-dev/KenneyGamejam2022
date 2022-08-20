@@ -35,6 +35,15 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Carry"",
+                    ""type"": ""Button"",
+                    ""id"": ""cc495436-a34d-45bd-bbe3-12ab3d32d246"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -180,6 +189,61 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1bcb903e-0a66-4841-bb87-cf066a765dfa"",
+                    ""path"": ""<HID::BDA NSW wired controller>/button2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Carry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""61151c8c-c7c8-40f1-bd21-80dbf395be07"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Carry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4fec5d8a-b49c-4e9a-8102-d92337922fb2"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Carry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b6ae0dc1-2612-4181-bbc7-5a05a5e6d48d"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Carry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5c7c8660-4f2e-400d-bd3a-7bd921daf21b"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Carry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -189,6 +253,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
         // Player controls
         m_Playercontrols = asset.FindActionMap("Player controls", throwIfNotFound: true);
         m_Playercontrols_Move = m_Playercontrols.FindAction("Move", throwIfNotFound: true);
+        m_Playercontrols_Carry = m_Playercontrols.FindAction("Carry", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -249,11 +314,13 @@ public partial class @Input : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Playercontrols;
     private IPlayercontrolsActions m_PlayercontrolsActionsCallbackInterface;
     private readonly InputAction m_Playercontrols_Move;
+    private readonly InputAction m_Playercontrols_Carry;
     public struct PlayercontrolsActions
     {
         private @Input m_Wrapper;
         public PlayercontrolsActions(@Input wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Playercontrols_Move;
+        public InputAction @Carry => m_Wrapper.m_Playercontrols_Carry;
         public InputActionMap Get() { return m_Wrapper.m_Playercontrols; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -266,6 +333,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Move.started -= m_Wrapper.m_PlayercontrolsActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_PlayercontrolsActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_PlayercontrolsActionsCallbackInterface.OnMove;
+                @Carry.started -= m_Wrapper.m_PlayercontrolsActionsCallbackInterface.OnCarry;
+                @Carry.performed -= m_Wrapper.m_PlayercontrolsActionsCallbackInterface.OnCarry;
+                @Carry.canceled -= m_Wrapper.m_PlayercontrolsActionsCallbackInterface.OnCarry;
             }
             m_Wrapper.m_PlayercontrolsActionsCallbackInterface = instance;
             if (instance != null)
@@ -273,6 +343,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @Carry.started += instance.OnCarry;
+                @Carry.performed += instance.OnCarry;
+                @Carry.canceled += instance.OnCarry;
             }
         }
     }
@@ -280,5 +353,6 @@ public partial class @Input : IInputActionCollection2, IDisposable
     public interface IPlayercontrolsActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnCarry(InputAction.CallbackContext context);
     }
 }
