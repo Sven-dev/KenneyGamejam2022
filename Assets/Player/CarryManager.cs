@@ -115,6 +115,7 @@ public class CarryManager : MonoBehaviour
         rotation.z = Mathf.Round(rotation.z / 90) * 90;
         CarriedItem.eulerAngles = rotation;
 
+        CarriedItem = null;
         CarriedItem.GetComponent<Collider>().enabled = true;
         anim.SetBool("Holding", false);
     }
