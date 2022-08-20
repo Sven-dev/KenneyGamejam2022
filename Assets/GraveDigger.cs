@@ -39,7 +39,7 @@ public class GraveDigger : MonoBehaviour
 
         Vector3 rotation = grave.eulerAngles;
         rotation.x = Mathf.Round(rotation.x / 90) * 90;
-        rotation.y = Mathf.Round(rotation.y / 90) * 90;
+        rotation.y = -Mathf.Round(rotation.y / 90) * 90;
         rotation.z = Mathf.Round(rotation.z / 90) * 90;
         grave.eulerAngles = rotation;
 
