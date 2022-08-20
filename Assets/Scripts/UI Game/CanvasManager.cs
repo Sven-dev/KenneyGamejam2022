@@ -97,6 +97,8 @@ public class CanvasManager : MonoBehaviour
         CoinPanel.UpdateAmount(_amount);
     }
 
+    
+
     #endregion
 
 
