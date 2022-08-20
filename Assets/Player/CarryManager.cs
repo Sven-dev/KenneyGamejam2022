@@ -61,6 +61,8 @@ public class CarryManager : MonoBehaviour
 
     private void PickUp(Transform item)
     {
+        item.GetComponent<Collider>().enabled = false;
+
         item.parent = CarryPivot;
         item.localPosition = Vector3.zero;
         item.localRotation = Quaternion.Euler(Vector3.zero);
@@ -70,8 +72,15 @@ public class CarryManager : MonoBehaviour
 
     private void Drop()
     {
-        CarriedItem.position = DropPivot.position;
+        CarriedItem.GetComponent<Collider>().enabled = true;
+
+        CarriedItem.position = new Vector3(Mathf.Round(DropPivot.position.x), Mathf.Round(DropPivot.position.y), Mathf.Round(DropPivot.position.z));
         CarriedItem.parent = null;
-        CarriedItem.localRotation = Quaternion.Euler(Vector3.zero);
+
+        Vector3 rotation = transform.eulerAngles;
+        rotation.x = Mathf.Round(rotation.x / 90) * 90;
+        rotation.y = Mathf.Round(rotation.y / 90) * 90;
+        rotation.z = Mathf.Round(rotation.z / 90) * 90;
+        CarriedItem.eulerAngles = rotation;
     }
 }
