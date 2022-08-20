@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &495261728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 495261729}
+  m_Layer: 6
+  m_Name: DropPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &495261729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495261728}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9180875557587486723}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2066333140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2066333141}
+  m_Layer: 6
+  m_Name: CarryPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2066333141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066333140}
+  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
+  m_LocalPosition: {x: 0, y: 0.659, z: 0.637}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9180875557587486723}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
 --- !u!1 &2437090734365805247
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,11 +106,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DigAllowed: 0
-  GravePivotStart: {fileID: 0}
-  GravePivotEnd: {fileID: 0}
-  GravePrefab: {fileID: 0}
-  Animator: {fileID: 0}
-  Movement: {fileID: 0}
+  GravePivotStart: {fileID: 5005382338343794599}
+  GravePivotEnd: {fileID: 110991582611309974}
+  GravePrefab: {fileID: 6481352140122453760, guid: 4ba0c0924f75f5a4996c3fb3e4ddfcd6, type: 3}
+  Animator: {fileID: 7739461003609824321}
+  Movement: {fileID: 7188549463513363811}
 --- !u!1 &3474958541690423380
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,7 +139,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2066333141}
+  - {fileID: 495261729}
   m_Father: {fileID: 7188549463513363810}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -109,9 +171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e130023a0cabdb4ab62f979813e24aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CarryPivot: {fileID: 0}
-  DropPivot: {fileID: 0}
-  anim: {fileID: 0}
+  CarryPivot: {fileID: 2066333141}
+  DropPivot: {fileID: 495261729}
+  anim: {fileID: 7739461003609824321}
   Carryables: []
 --- !u!1 &5232528019244461003
 GameObject:
@@ -137,7 +199,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5232528019244461003}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2891671564088756029}
@@ -196,7 +258,7 @@ MonoBehaviour:
   Speed: 5
   Cam: {fileID: 0}
   Rigidbody: {fileID: 7188549463513363808}
-  anim: {fileID: 0}
+  anim: {fileID: 7739461003609824321}
 --- !u!54 &7188549463513363808
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -211,7 +273,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &7188549463513363813
 CapsuleCollider:
@@ -332,7 +394,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7502261072080938615}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2891671564088756029}
@@ -398,5 +460,10 @@ PrefabInstance:
 --- !u!4 &7618175214522771514 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7618175215796433265, guid: cadf2c5f71d1dea4385784086948c012, type: 3}
+  m_PrefabInstance: {fileID: 1550555467}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7739461003609824321 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7739461005155845386, guid: cadf2c5f71d1dea4385784086948c012, type: 3}
   m_PrefabInstance: {fileID: 1550555467}
   m_PrefabAsset: {fileID: 0}

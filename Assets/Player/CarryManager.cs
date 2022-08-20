@@ -80,6 +80,10 @@ public class CarryManager : MonoBehaviour
             {
                 CS.RemoveStone(item);
             }
+            else if (item.CompareTag("Shovel"))
+            {
+                GetComponent<GraveDigger>().DigAllowed = true;
+            }
         }
 
         item.parent = CarryPivot;
@@ -96,6 +100,12 @@ public class CarryManager : MonoBehaviour
 
     private void Drop()
     {
+        Carrying = false;
+        if (CarriedItem.CompareTag("Shovel"))
+        {
+            GetComponent<GraveDigger>().DigAllowed = false;
+        }
+
         CarriedItem.position = new Vector3(Mathf.Round(DropPivot.position.x), Mathf.Round(DropPivot.position.y), Mathf.Round(DropPivot.position.z));
         CarriedItem.parent = null;
 

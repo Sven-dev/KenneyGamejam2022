@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Dig",
+                    "type": "Button",
+                    "id": "fafa085e-b270-4c3f-902b-4bd2e1411db3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -203,8 +212,8 @@
                 },
                 {
                     "name": "",
-                    "id": "b6ae0dc1-2612-4181-bbc7-5a05a5e6d48d",
-                    "path": "<Mouse>/rightButton",
+                    "id": "5c7c8660-4f2e-400d-bd3a-7bd921daf21b",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -214,12 +223,34 @@
                 },
                 {
                     "name": "",
-                    "id": "5c7c8660-4f2e-400d-bd3a-7bd921daf21b",
-                    "path": "<Keyboard>/space",
+                    "id": "ea787e0f-328d-48d8-bb91-3936203e23fb",
+                    "path": "<HID::BDA NSW wired controller>/button3",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Carry",
+                    "action": "Dig",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b06a8651-1bb1-487e-bbac-89f3ea37af33",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dig",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ca8176b1-8e04-47d6-bef9-426d2a8a95d4",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dig",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

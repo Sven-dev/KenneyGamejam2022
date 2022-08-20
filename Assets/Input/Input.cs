@@ -44,6 +44,15 @@ public partial class @Input : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dig"",
+                    ""type"": ""Button"",
+                    ""id"": ""fafa085e-b270-4c3f-902b-4bd2e1411db3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -225,8 +234,8 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""b6ae0dc1-2612-4181-bbc7-5a05a5e6d48d"",
-                    ""path"": ""<Mouse>/rightButton"",
+                    ""id"": ""5c7c8660-4f2e-400d-bd3a-7bd921daf21b"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -236,12 +245,34 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""5c7c8660-4f2e-400d-bd3a-7bd921daf21b"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""id"": ""ea787e0f-328d-48d8-bb91-3936203e23fb"",
+                    ""path"": ""<HID::BDA NSW wired controller>/button3"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Carry"",
+                    ""action"": ""Dig"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b06a8651-1bb1-487e-bbac-89f3ea37af33"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dig"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ca8176b1-8e04-47d6-bef9-426d2a8a95d4"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dig"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -254,6 +285,7 @@ public partial class @Input : IInputActionCollection2, IDisposable
         m_Playercontrols = asset.FindActionMap("Player controls", throwIfNotFound: true);
         m_Playercontrols_Move = m_Playercontrols.FindAction("Move", throwIfNotFound: true);
         m_Playercontrols_Carry = m_Playercontrols.FindAction("Carry", throwIfNotFound: true);
+        m_Playercontrols_Dig = m_Playercontrols.FindAction("Dig", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -315,12 +347,14 @@ public partial class @Input : IInputActionCollection2, IDisposable
     private IPlayercontrolsActions m_PlayercontrolsActionsCallbackInterface;
     private readonly InputAction m_Playercontrols_Move;
     private readonly InputAction m_Playercontrols_Carry;
+    private readonly InputAction m_Playercontrols_Dig;
     public struct PlayercontrolsActions
     {
         private @Input m_Wrapper;
         public PlayercontrolsActions(@Input wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Playercontrols_Move;
         public InputAction @Carry => m_Wrapper.m_Playercontrols_Carry;
+        public InputAction @Dig => m_Wrapper.m_Playercontrols_Dig;
         public InputActionMap Get() { return m_Wrapper.m_Playercontrols; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -336,6 +370,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Carry.started -= m_Wrapper.m_PlayercontrolsActionsCallbackInterface.OnCarry;
                 @Carry.performed -= m_Wrapper.m_PlayercontrolsActionsCallbackInterface.OnCarry;
                 @Carry.canceled -= m_Wrapper.m_PlayercontrolsActionsCallbackInterface.OnCarry;
+                @Dig.started -= m_Wrapper.m_PlayercontrolsActionsCallbackInterface.OnDig;
+                @Dig.performed -= m_Wrapper.m_PlayercontrolsActionsCallbackInterface.OnDig;
+                @Dig.canceled -= m_Wrapper.m_PlayercontrolsActionsCallbackInterface.OnDig;
             }
             m_Wrapper.m_PlayercontrolsActionsCallbackInterface = instance;
             if (instance != null)
@@ -346,6 +383,9 @@ public partial class @Input : IInputActionCollection2, IDisposable
                 @Carry.started += instance.OnCarry;
                 @Carry.performed += instance.OnCarry;
                 @Carry.canceled += instance.OnCarry;
+                @Dig.started += instance.OnDig;
+                @Dig.performed += instance.OnDig;
+                @Dig.canceled += instance.OnDig;
             }
         }
     }
@@ -354,5 +394,6 @@ public partial class @Input : IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnCarry(InputAction.CallbackContext context);
+        void OnDig(InputAction.CallbackContext context);
     }
 }
