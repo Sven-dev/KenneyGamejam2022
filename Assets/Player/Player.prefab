@@ -89,7 +89,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5005382338343794599}
-  - {fileID: 110991582611309974}
   m_Father: {fileID: 7188549463513363810}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -106,8 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DigAllowed: 0
-  GravePivotStart: {fileID: 5005382338343794599}
-  GravePivotEnd: {fileID: 110991582611309974}
+  GravePivot: {fileID: 5005382338343794599}
   GravePrefab: {fileID: 6481352140122453760, guid: 4ba0c0924f75f5a4996c3fb3e4ddfcd6, type: 3}
   Animator: {fileID: 7739461003609824321}
   Movement: {fileID: 7188549463513363811}
@@ -175,36 +173,6 @@ MonoBehaviour:
   DropPivot: {fileID: 495261729}
   anim: {fileID: 7739461003609824321}
   Carryables: []
---- !u!1 &5232528019244461003
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 110991582611309974}
-  m_Layer: 0
-  m_Name: GraveEndPivot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &110991582611309974
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5232528019244461003}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2891671564088756029}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7188549463513363809
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,7 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5005382338343794599}
   m_Layer: 0
-  m_Name: GraveStartPivot
+  m_Name: GravePivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

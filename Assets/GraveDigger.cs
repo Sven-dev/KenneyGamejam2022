@@ -8,8 +8,7 @@ public class GraveDigger : MonoBehaviour
 
     public bool DigAllowed = false;
     [Space]
-    [SerializeField] Transform GravePivotStart;
-    [SerializeField] Transform GravePivotEnd;
+    [SerializeField] Transform GravePivot;
     [SerializeField] Transform GravePrefab;
     [Space]
     [SerializeField] private Animator Animator;
@@ -33,23 +32,29 @@ public class GraveDigger : MonoBehaviour
     {
         Animator.SetTrigger("DiggyDiggyHole");
         Movement.MovingAllowed = false;
-        Transform grave = Instantiate(GravePrefab, GravePivotStart.position, transform.rotation);
+        Transform grave = Instantiate(GravePrefab, GravePivot.position, transform.rotation);
 
-        grave.position = new Vector3(Mathf.Round(GravePivotStart.position.x), GravePivotStart.position.y, Mathf.Round(GravePivotStart.position.z));
+        grave.position = new Vector3(
+            Mathf.RoundToInt(GravePivot.position.x),
+            GravePivot.position.y,
+            Mathf.RoundToInt(GravePivot.position.z));
 
         Vector3 rotation = grave.eulerAngles;
-        rotation.x = Mathf.Round(rotation.x / 90) * 90;
-        rotation.y = -Mathf.Round(rotation.y / 90) * 90;
-        rotation.z = Mathf.Round(rotation.z / 90) * 90;
+        rotation.x = Mathf.RoundToInt(rotation.x / 90) * 90;
+        rotation.y = -Mathf.RoundToInt(rotation.y / 90) * 90;
+        rotation.z = Mathf.RoundToInt(rotation.z / 90) * 90;
         grave.eulerAngles = rotation;
 
         yield return new WaitForSeconds(0.25f);
+
+        Vector3 graveStart = grave.position;
+        Vector3 graveEnd = grave.position + Vector3.up * 0.5f;
 
         float progress = 0;
         while (progress < 1)
         {
             progress = Mathf.Clamp01(progress + Time.deltaTime / 3.5f);
-            grave.position = Vector3.Lerp(GravePivotStart.position, GravePivotEnd.position, progress);
+            grave.position = Vector3.Lerp(graveStart, graveEnd, progress);
 
             yield return null;
         }

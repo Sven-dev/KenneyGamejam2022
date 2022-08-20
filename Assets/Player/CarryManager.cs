@@ -107,13 +107,16 @@ public class CarryManager : MonoBehaviour
             GraveDigger.Instance.DigAllowed = false;
         }
 
-        CarriedItem.position = new Vector3(Mathf.Round(DropPivot.position.x), Mathf.Round(DropPivot.position.y), Mathf.Round(DropPivot.position.z));
+        CarriedItem.position = new Vector3(
+            Mathf.RoundToInt(DropPivot.position.x),
+            Mathf.RoundToInt(DropPivot.position.y),
+            Mathf.RoundToInt(DropPivot.position.z));
         CarriedItem.parent = null;
 
         Vector3 rotation = transform.eulerAngles;
-        rotation.x = Mathf.Round(rotation.x / 90) * 90;
-        rotation.y = Mathf.Round(rotation.y / 90) * 90;
-        rotation.z = Mathf.Round(rotation.z / 90) * 90;
+        rotation.x = Mathf.RoundToInt(rotation.x / 90) * 90;
+        rotation.y = Mathf.RoundToInt(rotation.y / 90) * 90;
+        rotation.z = Mathf.RoundToInt(rotation.z / 90) * 90;
         CarriedItem.eulerAngles = rotation;
 
         

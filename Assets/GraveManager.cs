@@ -14,11 +14,11 @@ public class GraveManager : MonoBehaviour
 
     private IEnumerator _SpawnZombie()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
         float progress = 0;
         while (progress < 1)
         {
-            progress += Time.deltaTime / 10;
+            progress += Time.deltaTime / 20;
 
             Zombie.localRotation = Quaternion.Lerp(Quaternion.Euler(Vector3.right * 180), Quaternion.Euler(Vector3.zero), progress);
             yield return null;
