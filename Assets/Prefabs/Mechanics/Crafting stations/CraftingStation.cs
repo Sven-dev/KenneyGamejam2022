@@ -40,15 +40,17 @@ public class CraftingStation : MonoBehaviour
     {
         wood.parent = WoodPivot;
         wood.transform.localPosition = Vector3.zero;
-        wood.transform.Translate(Vector3.up * WoodStack.Count * 0.25f);
+        wood.transform.Translate(Vector3.up * WoodPivot.childCount * 0.25f);
 
         WoodStack.Add(wood);
     }
 
-    private void RemoveWood(Transform wood)
+    public void RemoveWood(Transform wood)
     {
+        print("Removed object: " + wood.name);
         WoodStack.Remove(wood);
-        foreach(Transform stackedWood in WoodStack)
+
+        foreach(Transform stackedWood in WoodPivot)
         {
             stackedWood.Translate(Vector3.down * 0.25f);
         }
@@ -58,14 +60,16 @@ public class CraftingStation : MonoBehaviour
     {
         stone.parent = StonePivot;
         stone.transform.localPosition = Vector3.zero;
-        stone.transform.Translate(Vector3.up * StoneStack.Count * 0.25f);
+        stone.transform.Translate(Vector3.up * StonePivot.childCount * 0.25f);
 
         StoneStack.Add(stone);
     }
 
-    private void RemoveStone(Transform stone)
+    public void RemoveStone(Transform stone)
     {
+        print("Removed object: " + stone.name);
         StoneStack.Remove(stone);
+
         foreach (Transform stackedStone in StoneStack)
         {
             print("moving stone down");

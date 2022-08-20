@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Space]
     [SerializeField] private Camera Cam;
     [SerializeField] private Rigidbody Rigidbody;
+    [SerializeField] private Animator anim;
 
     private Vector3 Movement = Vector3.zero;
 
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //Move
         Rigidbody.position += Movement * Speed * Time.deltaTime;
+        anim.SetFloat("Speed", Movement.sqrMagnitude);
 
         //Rotate
         LerpLookAt();

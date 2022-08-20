@@ -7,6 +7,8 @@ public class CarryManager : MonoBehaviour
     [SerializeField] private Transform CarryPivot;
     [SerializeField] private Transform DropPivot;
 
+    [SerializeField] private Animator anim;
+
     private bool Carrying = true;
     [SerializeField] private List<Transform> Carryables = new List<Transform>();
     private Transform CarriedItem;
@@ -63,11 +65,38 @@ public class CarryManager : MonoBehaviour
     {
         item.GetComponent<Collider>().enabled = false;
 
+        CraftingStation CS = item.GetComponentInParent<CraftingStation>();
+        if (CS)
+        {
+            print("yes?");
+
+            if (item.CompareTag("Wood"))
+            {
+                CS.RemoveWood(item);
+            }
+            else if(item.CompareTag("Stone"))
+            {
+                CS.RemoveStone(item);
+            }
+            else if (item.CompareTag("Iron"))
+            {
+                CS.RemoveStone(item);
+            }
+        }
+        else
+        {
+            print("no");
+        }
         item.parent = CarryPivot;
         item.localPosition = Vector3.zero;
         item.localRotation = Quaternion.Euler(Vector3.zero);
 
         CarriedItem = item;
+
+        if (CarriedItem != null)
+        {
+            anim.SetBool("Holding", true);
+        }
     }
 
     private void Drop()
@@ -82,5 +111,6 @@ public class CarryManager : MonoBehaviour
         CarriedItem.eulerAngles = rotation;
 
         CarriedItem.GetComponent<Collider>().enabled = true;
+        anim.SetBool("Holding", false);
     }
 }
