@@ -72,8 +72,6 @@ public class CarryManager : MonoBehaviour
 
     private void Drop()
     {
-        CarriedItem.GetComponent<Collider>().enabled = true;
-
         CarriedItem.position = new Vector3(Mathf.Round(DropPivot.position.x), Mathf.Round(DropPivot.position.y), Mathf.Round(DropPivot.position.z));
         CarriedItem.parent = null;
 
@@ -82,5 +80,7 @@ public class CarryManager : MonoBehaviour
         rotation.y = Mathf.Round(rotation.y / 90) * 90;
         rotation.z = Mathf.Round(rotation.z / 90) * 90;
         CarriedItem.eulerAngles = rotation;
+
+        CarriedItem.GetComponent<Collider>().enabled = true;
     }
 }
