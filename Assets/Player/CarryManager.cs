@@ -72,5 +72,6 @@ public class CarryManager : MonoBehaviour
     {
         CarriedItem.position = DropPivot.position;
         CarriedItem.parent = null;
+        CarriedItem.localRotation = Quaternion.Euler(Vector3.zero);
     }
 }
