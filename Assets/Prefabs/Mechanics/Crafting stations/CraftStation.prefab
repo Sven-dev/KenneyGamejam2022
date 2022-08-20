@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1426489556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1426489557}
+  m_Layer: 0
+  m_Name: WoodPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1426489557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426489556}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1524790428953667643}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1456503310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1456503311}
+  m_Layer: 0
+  m_Name: StonePivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1456503311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456503310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1524790428953667643}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6078290407451774032
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,8 +69,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1524790428953667643}
-  - component: {fileID: 6601437837040957730}
-  m_Layer: 0
+  - component: {fileID: 232456700}
+  - component: {fileID: 232456701}
+  m_Layer: 6
   m_Name: CraftStation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,10 +92,12 @@ Transform:
   - {fileID: 1251655874778875915}
   - {fileID: 1447427053604392422}
   - {fileID: 1251655873143635406}
+  - {fileID: 1426489557}
+  - {fileID: 1456503311}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6601437837040957730
+--- !u!65 &232456700
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,8 +108,22 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.1137998, y: 0.9399999, z: 1.3064}
-  m_Center: {x: 0, y: 0.46999994, z: 0}
+  m_Size: {x: 4.2276, y: 17.356142, z: 3.42}
+  m_Center: {x: 0, y: 8.20807, z: 0}
+--- !u!114 &232456701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6078290407451774032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c64ce65a0d5a047b7b197601ceada1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WoodPivot: {fileID: 1426489557}
+  StonePivot: {fileID: 1456503311}
 --- !u!1001 &1413270748215912973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -190,11 +267,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 143b22aa03c343341bfd0eeaeb5e679c, type: 3}
+--- !u!1 &1879433495387411121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 143b22aa03c343341bfd0eeaeb5e679c, type: 3}
+  m_PrefabInstance: {fileID: 1645079537358516192}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1251655874778875915 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 143b22aa03c343341bfd0eeaeb5e679c, type: 3}
   m_PrefabInstance: {fileID: 1645079537358516192}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1136388852
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879433495387411121}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1137998, y: 0.9399999, z: 1.3064}
+  m_Center: {x: 0, y: 0.46999994, z: 0}
 --- !u!1001 &1645079539002153509
 PrefabInstance:
   m_ObjectHideFlags: 0
