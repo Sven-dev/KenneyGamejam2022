@@ -33,7 +33,15 @@ public class GraveDigger : MonoBehaviour
     {
         Animator.SetTrigger("DiggyDiggyHole");
         Movement.MovingAllowed = false;
-        Transform Grave = Instantiate(GravePrefab, GravePivotStart.position, transform.rotation);
+        Transform grave = Instantiate(GravePrefab, GravePivotStart.position, transform.rotation);
+
+        grave.position = new Vector3(Mathf.Round(GravePivotStart.position.x), GravePivotStart.position.y, Mathf.Round(GravePivotStart.position.z));
+
+        Vector3 rotation = grave.eulerAngles;
+        rotation.x = Mathf.Round(rotation.x / 90) * 90;
+        rotation.y = Mathf.Round(rotation.y / 90) * 90;
+        rotation.z = Mathf.Round(rotation.z / 90) * 90;
+        grave.eulerAngles = rotation;
 
         yield return new WaitForSeconds(0.25f);
 
@@ -41,7 +49,7 @@ public class GraveDigger : MonoBehaviour
         while (progress < 1)
         {
             progress = Mathf.Clamp01(progress + Time.deltaTime / 3.5f);
-            Grave.position = Vector3.Lerp(GravePivotStart.position, GravePivotEnd.position, progress);
+            grave.position = Vector3.Lerp(GravePivotStart.position, GravePivotEnd.position, progress);
 
             yield return null;
         }
