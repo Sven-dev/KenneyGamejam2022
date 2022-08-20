@@ -9,6 +9,16 @@ public class CraftingStation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("player was here");
+            if (CanvasManager.Instance)
+            {
+                Debug.Log("canvas exists");
+                CanvasManager.Instance.ShowCraftingPanel(true);
+            }
+        }
+
         if (other.tag == "Wood")
         {
             AddWood(other.transform);
@@ -17,11 +27,18 @@ public class CraftingStation : MonoBehaviour
         {
             AddStone(other.transform);
         }
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        print("Removed object: " + other.name);
+        if (other.CompareTag("Player"))
+        {
+            if (CanvasManager.Instance)
+            {
+                CanvasManager.Instance.ShowCraftingPanel(false);
+            }
+        }
 
         if (other.tag == "Wood")
         {
@@ -31,6 +48,7 @@ public class CraftingStation : MonoBehaviour
         {
             RemoveStone(other.transform);
         }
+
     }
 
     private void AddWood(Transform wood)
