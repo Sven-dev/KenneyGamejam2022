@@ -57,7 +57,6 @@ public class CraftingStation : MonoBehaviour
         wood.transform.localPosition = Vector3.zero;
         wood.transform.Translate(Vector3.up * WoodPivot.childCount * 0.25f);
     }
-
     public void RemoveWood(Transform wood)
     {
         foreach(Transform stackedWood in WoodPivot)
@@ -72,12 +71,20 @@ public class CraftingStation : MonoBehaviour
         stone.transform.localPosition = Vector3.zero;
         stone.transform.Translate(Vector3.up * StonePivot.childCount * 0.25f);
     }
-
     public void RemoveStone(Transform stone)
     {
         foreach (Transform stackedStone in StonePivot)
         {
             stackedStone.Translate(Vector3.down * 0.25f);
+        }
+    }
+
+
+    public void Craft(int _wood, int _stone)
+    {
+        if (StonePivot.childCount >= _stone && WoodPivot.childCount >= _wood)
+        {
+
         }
     }
 }
