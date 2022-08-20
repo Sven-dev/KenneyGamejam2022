@@ -9,7 +9,7 @@ public class CarryManager : MonoBehaviour
 
     [SerializeField] private Animator anim;
 
-    private bool Carrying = true;
+    private bool Carrying = false;
     [SerializeField] private List<Transform> Carryables = new List<Transform>();
     private Transform CarriedItem;
 
@@ -33,7 +33,6 @@ public class CarryManager : MonoBehaviour
 
     private void CalculatePickupDistance(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        Carrying = !Carrying;       
         if (!Carrying && Carryables.Count > 0)
         {
             //Calculate which item needs to be picked up
@@ -63,6 +62,7 @@ public class CarryManager : MonoBehaviour
 
     private void PickUp(Transform item)
     {
+        Carrying = true;
         item.GetComponent<Collider>().enabled = false;
 
         CraftingStation CS = item.GetComponentInParent<CraftingStation>();

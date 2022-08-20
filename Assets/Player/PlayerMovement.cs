@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] public bool MovingAllowed = true;
+    [Space]
     [SerializeField] private float Speed = 1;
     [Space]
     [SerializeField] private Camera Cam;
@@ -14,8 +16,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        Vector2 moveInput = InputManager.Input.Playercontrols.Move.ReadValue<Vector2>();
-        CalculateMovement(moveInput);
+        if (MovingAllowed)
+        {
+            Vector2 moveInput = InputManager.Input.Playercontrols.Move.ReadValue<Vector2>();
+            CalculateMovement(moveInput);
+        }
     }
 
     private void FixedUpdate()
