@@ -31,6 +31,9 @@ public class PlayerMovement : MonoBehaviour
     {
         //Move
         Rigidbody.position += Movement * Speed * Time.deltaTime;
+
+        //Rotate
+        LerpLookAt();
     }
 
     private void CalculateMovement(Vector2 movement)
@@ -43,6 +46,32 @@ public class PlayerMovement : MonoBehaviour
         right.y = 0.0f;
         right.Normalize();
 
-        Movement = towards * movement.y + right * movement.x;              
+        Movement = towards * movement.y + right * movement.x;   
+    }
+
+    private void LerpLookAt()
+    {
+        if (Movement.sqrMagnitude > 0)
+        {
+            Quaternion lookAt = Quaternion.LookRotation(Movement, Vector3.up);
+
+            float fLookTo = transform.rotation.eulerAngles.y;
+            float fLookAt = lookAt.eulerAngles.y;
+            float fNeed = fLookAt - fLookTo;
+
+            if (fNeed > 180.0f)
+            {
+                fNeed -= 360;
+            }
+
+            if (Mathf.Abs(fNeed) > 2.0f)
+            {
+                Rigidbody.rotation = Quaternion.Lerp(transform.rotation, lookAt, Time.deltaTime * 15.0f);
+            }
+            else
+            {
+                Rigidbody.rotation = Rigidbody.rotation;
+            }
+        }
     }
 }
