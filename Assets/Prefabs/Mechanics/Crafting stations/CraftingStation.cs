@@ -7,9 +7,6 @@ public class CraftingStation : MonoBehaviour
     [SerializeField] private Transform WoodPivot;
     [SerializeField] private Transform StonePivot;
 
-    private List<Transform> WoodStack = new List<Transform>();
-    private List<Transform> StoneStack = new List<Transform>();
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Wood")
@@ -41,15 +38,10 @@ public class CraftingStation : MonoBehaviour
         wood.parent = WoodPivot;
         wood.transform.localPosition = Vector3.zero;
         wood.transform.Translate(Vector3.up * WoodPivot.childCount * 0.25f);
-
-        WoodStack.Add(wood);
     }
 
     public void RemoveWood(Transform wood)
     {
-        print("Removed object: " + wood.name);
-        WoodStack.Remove(wood);
-
         foreach(Transform stackedWood in WoodPivot)
         {
             stackedWood.Translate(Vector3.down * 0.25f);
@@ -61,18 +53,12 @@ public class CraftingStation : MonoBehaviour
         stone.parent = StonePivot;
         stone.transform.localPosition = Vector3.zero;
         stone.transform.Translate(Vector3.up * StonePivot.childCount * 0.25f);
-
-        StoneStack.Add(stone);
     }
 
     public void RemoveStone(Transform stone)
     {
-        print("Removed object: " + stone.name);
-        StoneStack.Remove(stone);
-
-        foreach (Transform stackedStone in StoneStack)
+        foreach (Transform stackedStone in StonePivot)
         {
-            print("moving stone down");
             stackedStone.Translate(Vector3.down * 0.25f);
         }
     }

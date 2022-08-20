@@ -68,8 +68,6 @@ public class CarryManager : MonoBehaviour
         CraftingStation CS = item.GetComponentInParent<CraftingStation>();
         if (CS)
         {
-            print("yes?");
-
             if (item.CompareTag("Wood"))
             {
                 CS.RemoveWood(item);
@@ -83,10 +81,7 @@ public class CarryManager : MonoBehaviour
                 CS.RemoveStone(item);
             }
         }
-        else
-        {
-            print("no");
-        }
+
         item.parent = CarryPivot;
         item.localPosition = Vector3.zero;
         item.localRotation = Quaternion.Euler(Vector3.zero);

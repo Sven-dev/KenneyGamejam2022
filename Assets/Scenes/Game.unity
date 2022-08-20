@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641365, b: 0.5748185, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.4964133, b: 0.5748177, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1842,6 +1842,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 460677998, guid: 837a8f661b74c934cbbb03cb7e8ff664, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 476486659}
+    - target: {fileID: 460677998, guid: 837a8f661b74c934cbbb03cb7e8ff664, type: 3}
       propertyPath: DropPivot
       value: 
       objectReference: {fileID: 495261729}
@@ -1905,6 +1909,10 @@ PrefabInstance:
       propertyPath: Cam
       value: 
       objectReference: {fileID: 9364992}
+    - target: {fileID: 7188549463513363811, guid: 837a8f661b74c934cbbb03cb7e8ff664, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 476486659}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 837a8f661b74c934cbbb03cb7e8ff664, type: 3}
 --- !u!4 &460677996 stripped
@@ -2056,6 +2064,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f5c1c0a6f6a850c43a3cdcd2a7e827f6, type: 3}
   m_PrefabInstance: {fileID: 469147817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &476486659 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7739461003609824321, guid: 837a8f661b74c934cbbb03cb7e8ff664, type: 3}
+  m_PrefabInstance: {fileID: 460677995}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &493153454
 PrefabInstance:
