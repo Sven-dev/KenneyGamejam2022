@@ -21,11 +21,15 @@ public class GraveManager : MonoBehaviour
     [Space]
     [SerializeField] private Transform RewardPivot;
     [SerializeField] private Transform Zombie;
+    [Space]
+    [SerializeField] private SpriteRenderer MoodLabel;
+    [SerializeField] private Sprite UnhappySprite;
+    [SerializeField] private Sprite NeutralSprite;
+    [SerializeField] private Sprite HappySprite;
+    [SerializeField] private Sprite PerfectSprite;
 
     private int BaseValue = 100;
     private float EnvironmentModifier = 1f;
-
-    private List<Transform> EnvironmentObjects = new List<Transform>();
 
     // Start is called before the first frame update
     private void Start()
@@ -41,12 +45,10 @@ public class GraveManager : MonoBehaviour
 
     private IEnumerator _IncomeLoop()
     {
+        yield return new WaitForSeconds(25);
+
         while (true)
         {
-            yield return new WaitForSeconds(5);
-
-            print("Started spherecast");
-
             //Get all carryable objects in a radius around the zombie
             Ray ray = new Ray(Zombie.position, Vector3.forward);
             LayerMask mask = LayerMask.GetMask("Carryable");
@@ -66,22 +68,18 @@ public class GraveManager : MonoBehaviour
                     carryable.transform.tag == "Stone" ||
                     carryable.transform.tag == "Iron")
                 {
-                    print("Material :(");
                     EnvironmentModifier -= MaterialPenalty;
                 }
                 else if (carryable.transform.tag == "Broken")
                 {
-                    print("Broken :(");
                     EnvironmentModifier -= BrokenPenalty;
                 }
                 else if (carryable.transform.tag == "Tier2")
                 {
-                    print("Tier 2 :)");
                     EnvironmentModifier += Tier2Bonus;
                 }
                 else if (carryable.transform.tag == "Tier3")
                 {
-                    print("Tier 3 :)");
                     EnvironmentModifier += Tier3Bonus;
                 }
             }
@@ -89,28 +87,27 @@ public class GraveManager : MonoBehaviour
             //gain money
             int money = (int)(BaseValue * EnvironmentModifier);
 
-            print(transform.name + " value: " + money);
-            if (money >= 200)
+            if (money >= 150)
             {
-                print("Earned: iron");
                 SpawnReward(IronPrefab);
+                MoodLabel.sprite = PerfectSprite;
             }
-            else if (money >= 150)
+            else if (money >= 125)
             {
-                print("Earned: stone");
                 SpawnReward(StonePrefab);
+                MoodLabel.sprite = HappySprite;
             }
             else if (money >= 100)
             {
-                print("Earned: wood");
                 SpawnReward(WoodPrefab);
+                MoodLabel.sprite = NeutralSprite;
             }
             else
             {
-                print("Earned: nothing");
+                MoodLabel.sprite = UnhappySprite;
             }
 
-            print("_________________________________________________________________________");
+            yield return new WaitForSeconds(60);
         }
     }
 

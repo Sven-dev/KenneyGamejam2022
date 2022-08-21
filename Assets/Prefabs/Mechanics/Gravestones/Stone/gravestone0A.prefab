@@ -111,6 +111,10 @@ PrefabInstance:
       propertyPath: UpgradesTo
       value: 
       objectReference: {fileID: 7846912750600608773, guid: bf008dc1c038df54b973f36481c570c8, type: 3}
+    - target: {fileID: 7459237406353922012, guid: 4d4c88cb1baabd342b1e3dc1f1319bce, type: 3}
+      propertyPath: Collider
+      value: 
+      objectReference: {fileID: 1008171525062555235}
     - target: {fileID: 9204126690637109980, guid: 4d4c88cb1baabd342b1e3dc1f1319bce, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -160,5 +164,10 @@ PrefabInstance:
 --- !u!4 &1976418204363280623 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9204126690637109980, guid: 4d4c88cb1baabd342b1e3dc1f1319bce, type: 3}
+  m_PrefabInstance: {fileID: 7266001194935224883}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1008171525062555235 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 7578356673373928528, guid: 4d4c88cb1baabd342b1e3dc1f1319bce, type: 3}
   m_PrefabInstance: {fileID: 7266001194935224883}
   m_PrefabAsset: {fileID: 0}

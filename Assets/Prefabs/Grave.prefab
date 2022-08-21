@@ -57,6 +57,11 @@ MonoBehaviour:
   IronPrefab: {fileID: 0}
   RewardPivot: {fileID: 6911605269356116054}
   Zombie: {fileID: 4481331075067798606}
+  MoodLabel: {fileID: 1591713661540487360}
+  UnhappySprite: {fileID: 21300000, guid: 4d5cb96be90f7c74c99aa33235d13ebb, type: 3}
+  NeutralSprite: {fileID: 21300000, guid: 345c328131278d449a5f749ab097404e, type: 3}
+  HappySprite: {fileID: 21300000, guid: 3554ff5a1ab9fc545bf57417e68daba7, type: 3}
+  PerfectSprite: {fileID: 21300000, guid: 6de53043f1d79b742ba6faa51f92a7e2, type: 3}
 --- !u!1 &3476188962495055805
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +92,68 @@ Transform:
   m_Father: {fileID: 6481352140122453760}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &741065430401177153
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4481331075067798606}
+    m_Modifications:
+    - target: {fileID: 1011340962861312688, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011340962861312688, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011340962861312688, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011340962861312688, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.035999894
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011340962861312688, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011340962861312688, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011340962861312688, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011340962861312688, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011340962861312688, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011340962861312688, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1011340962861312688, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3682142237577765195, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
+      propertyPath: m_Name
+      value: Mood Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
+--- !u!212 &1591713661540487360 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2044119871752734337, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
+  m_PrefabInstance: {fileID: 741065430401177153}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1058460802250690473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -144,11 +211,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2e21ee5ec65e3040871732b9cb504b0, type: 3}
+--- !u!1 &3853729372307832564 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4308636492843348317, guid: e2e21ee5ec65e3040871732b9cb504b0, type: 3}
+  m_PrefabInstance: {fileID: 1058460802250690473}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4481331075067798606 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3494945745612975079, guid: e2e21ee5ec65e3040871732b9cb504b0, type: 3}
   m_PrefabInstance: {fileID: 1058460802250690473}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &8784625807374762225
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3853729372307832564}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.7813222, z: 0.6312258}
+  m_Center: {x: 0, y: 0.7731639, z: 0.01982963}
 --- !u!1001 &1200660743416511655
 PrefabInstance:
   m_ObjectHideFlags: 0
