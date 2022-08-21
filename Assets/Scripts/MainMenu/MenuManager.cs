@@ -74,7 +74,6 @@ public class MenuManager : MonoBehaviour
 
     public void SliderMasterChanged(float _amount)
     {
-        Debug.Log("changed Master to " + _amount);
         if (AudioManager.Instance)
         {
             AudioManager.Instance.MasterVolume = _amount;
@@ -82,7 +81,6 @@ public class MenuManager : MonoBehaviour
     }
     public void SliderMusicChanged(float _amount)
     {
-        Debug.Log("changed Music to " + _amount);
         if (AudioManager.Instance)
         {
             AudioManager.Instance.MusicVolume = _amount;
@@ -90,7 +88,6 @@ public class MenuManager : MonoBehaviour
     }
     public void SliderSoundChanged(float _amount)
     {
-        Debug.Log("changed Sound to " + _amount);
         if (AudioManager.Instance)
         {
             AudioManager.Instance.SoundVolume = _amount;
@@ -98,7 +95,6 @@ public class MenuManager : MonoBehaviour
     }
     public void SliderDialogueChanged(float _amount)
     {
-        Debug.Log("changed Dialogue to " + _amount);
         if (AudioManager.Instance)
         {
             AudioManager.Instance.DialogueVolume = _amount;
