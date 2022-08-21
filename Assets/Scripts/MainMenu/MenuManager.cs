@@ -16,9 +16,6 @@ public class MenuManager : MonoBehaviour
 
     public void EndGame()
     {
-        if (LevelManager.Instance != null)
-        {
-            LevelManager.Instance.ExitGame();
-        }
+        LevelManager.ExitGame();
     }
 }

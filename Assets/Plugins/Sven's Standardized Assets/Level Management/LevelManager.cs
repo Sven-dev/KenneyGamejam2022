@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour
     }
 
     // Close the Application, or stop play in Editor
-    public void ExitGame()
+    static public void ExitGame()
     {
 #if UNITY_EDITOR
         EditorApplication.isPlaying = false;

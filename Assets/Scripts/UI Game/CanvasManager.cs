@@ -97,7 +97,10 @@ public class CanvasManager : MonoBehaviour
         CoinPanel.UpdateAmount(_amount);
     }
 
-    
+    public void QuitGame()
+    {
+        LevelManager.ExitGame();
+    }
 
     #endregion
 

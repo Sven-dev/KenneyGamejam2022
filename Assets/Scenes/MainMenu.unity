@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 38.802}
-  m_SizeDelta: {x: -60, y: -277.605}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -60, y: -60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &86870835
 MonoBehaviour:
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  m_Color: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -184,25 +184,21 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: f9b3d22949b63fd43b4182af22618009, type: 3}
     m_FontSize: 38
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 50
+    m_BestFit: 1
+    m_MinSize: 6
+    m_MaxSize: 42
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Well, first we have to make the game don''t we WhySoup?
-
-
-    Afterwards
-    we can see how we teach people the controls with images and button and keyprompts,
-    ya dig what I say?
-
-
-    Well enough Banter, here we will add the tutorial and
-    such.'
+  m_Text: "Your turn at the graveyard, so pick up a shovel and release the zombies!\n\ncraft
+    decoration to make zombies happier and give you better resources, with which
+    to upgrade the decoration\n\n\n zombie call\npick up shovel and dig with left
+    click\n\n pick up\npick up and drop resource with right click\n\n craft\nput
+    resource on crafting bench and click the item\n\n upgrade\ndrop required resource
+    on top of the item"
 --- !u!222 &86870836
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -969,8 +965,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -86.68}
-  m_SizeDelta: {x: -60, y: -227.412}
+  m_AnchoredPosition: {x: 0, y: -110}
+  m_SizeDelta: {x: -60, y: -280}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &696590536
 MonoBehaviour:
@@ -985,7 +981,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  m_Color: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -996,17 +992,16 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: f9b3d22949b63fd43b4182af22618009, type: 3}
     m_FontSize: 38
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 50
+    m_MaxSize: 42
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Host of Jam:\n Kenney\n\nLead:\n WhySoup, the Soup\n\nLittle bud:\n Greenclonk,
-    the Ant"
+  m_Text: "Host of Jam:\n - Kenney\n\nProgrammers:\n - WhySoup\n - Greenclonk"
 --- !u!222 &696590537
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1812,7 +1807,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: -40, y: 100}
+  m_SizeDelta: {x: -20, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1940573161
 MonoBehaviour:
@@ -1827,7 +1822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  m_Color: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1847,7 +1842,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Zombie Cuisine
+  m_Text: Graveyard Shift
 --- !u!222 &1940573162
 CanvasRenderer:
   m_ObjectHideFlags: 0
