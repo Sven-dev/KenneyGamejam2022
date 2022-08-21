@@ -17,6 +17,6 @@ public class ItemSelectionUI : MonoBehaviour
     }
     public void ChangeAmount(int _amount)
     {
-        Number.text = "x" + _amount;
+        if(Number != null) Number.text = "x" + _amount;
     }
 }

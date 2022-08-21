@@ -214,6 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BorderColour: {fileID: 5347362415866125637}
   Icon: {fileID: 5164408531434156458}
+  Number: {fileID: 5540086830383325205}
 --- !u!1 &4668180481975388583
 GameObject:
   m_ObjectHideFlags: 0

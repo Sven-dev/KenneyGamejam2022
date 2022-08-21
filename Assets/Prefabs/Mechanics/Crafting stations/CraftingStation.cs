@@ -7,6 +7,8 @@ public class CraftingStation : MonoBehaviour
     [SerializeField] private Transform WoodPivot;
     [SerializeField] private Transform StonePivot;
 
+    [SerializeField] private Transform DropPivot;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -107,12 +109,23 @@ public class CraftingStation : MonoBehaviour
                 removal.gameObject.SetActive(false);
             }
 
-
             return true;
         }
         else
         {
             return false;
+        }
+    }
+
+    public Vector3 DropPosition()
+    {
+        if (DropPivot != null)
+        {
+            return DropPivot.position;
+        }
+        else
+        {
+            return Vector3.zero;
         }
     }
 }
