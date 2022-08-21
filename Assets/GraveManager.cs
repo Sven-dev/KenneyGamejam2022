@@ -90,12 +90,12 @@ public class GraveManager : MonoBehaviour
             int money = (int)(BaseValue * EnvironmentModifier);
 
             print(transform.name + " value: " + money);
-            if (money >= 300)
+            if (money >= 200)
             {
                 print("Earned: iron");
                 SpawnReward(IronPrefab);
             }
-            else if (money >= 200)
+            else if (money >= 150)
             {
                 print("Earned: stone");
                 SpawnReward(StonePrefab);
