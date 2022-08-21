@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class GraveManager : MonoBehaviour
 {
+    [SerializeField] private float EnvironmentRange = 1;
+    [Space]
+    [Range(0, 0.1f)]
+    [SerializeField] private float MaterialPenalty = 0.025f;
+    [Range(0, 0.1f)]
+    [SerializeField] private float BrokenPenalty = 0.1f;
+    [Range(0, 0.1f)]
+    [SerializeField] private float Tier2Bonus = 0.025f;
+    [Range(0, 0.1f)]
+    [SerializeField] private float Tier3Bonus = 0.1f;
+    [Space]
+    [SerializeField] private Transform WoodPrefab;
+    [SerializeField] private Transform StonePrefab;
+    [SerializeField] private Transform IronPrefab;
+    [Space]
+    [SerializeField] private Transform RewardPivot;
     [SerializeField] private Transform Zombie;
 
     private int BaseValue = 100;
-    private float GravestoneModifier = 0.25f;
-    private float LightModifier = 0.5f;
-    private float EnvironmentModifier = 0.1f;
+    private float EnvironmentModifier = 1f;
 
     private List<Transform> EnvironmentObjects = new List<Transform>();
 
@@ -29,10 +43,80 @@ public class GraveManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(60);
+            yield return new WaitForSeconds(5);
+
+            print("Started spherecast");
+
+            //Get all carryable objects in a radius around the zombie
+            Ray ray = new Ray(Zombie.position, Vector3.forward);
+            LayerMask mask = LayerMask.GetMask("Carryable");
+            RaycastHit[] objects = Physics.SphereCastAll(ray, EnvironmentRange, 100, mask);
+
+            Debug.DrawRay(Zombie.position, Vector3.forward * EnvironmentRange, Color.red, 5f);
+            Debug.DrawRay(Zombie.position, Vector3.back * EnvironmentRange, Color.red, 5f);
+            Debug.DrawRay(Zombie.position, Vector3.left * EnvironmentRange, Color.red, 5f);
+            Debug.DrawRay(Zombie.position, Vector3.right * EnvironmentRange, Color.red, 5f);
+
+            EnvironmentModifier = 1f;
+            foreach(RaycastHit carryable in objects)
+            {
+                print("Found: " + carryable.transform.name);
+
+                if (carryable.transform.tag == "Wood" ||
+                    carryable.transform.tag == "Stone" ||
+                    carryable.transform.tag == "Iron")
+                {
+                    print("Material :(");
+                    EnvironmentModifier -= MaterialPenalty;
+                }
+                else if (carryable.transform.tag == "Broken")
+                {
+                    print("Broken :(");
+                    EnvironmentModifier -= BrokenPenalty;
+                }
+                else if (carryable.transform.tag == "Tier2")
+                {
+                    print("Tier 2 :)");
+                    EnvironmentModifier += Tier2Bonus;
+                }
+                else if (carryable.transform.tag == "Tier3")
+                {
+                    print("Tier 3 :)");
+                    EnvironmentModifier += Tier3Bonus;
+                }
+            }
+
             //gain money
-            int money = (int)(BaseValue * GravestoneModifier * LightModifier * EnvironmentModifier);
+            int money = (int)(BaseValue * EnvironmentModifier);
+
+            print(transform.name + " value: " + money);
+            if (money >= 300)
+            {
+                print("Earned: iron");
+                SpawnReward(IronPrefab);
+            }
+            else if (money >= 200)
+            {
+                print("Earned: stone");
+                SpawnReward(StonePrefab);
+            }
+            else if (money >= 100)
+            {
+                print("Earned: wood");
+                SpawnReward(WoodPrefab);
+            }
+            else
+            {
+                print("Earned: nothing");
+            }
+
+            print("_________________________________________________________________________");
         }
+    }
+
+    private void SpawnReward(Transform Reward)
+    {
+        Instantiate(Reward, RewardPivot.position, Quaternion.identity, RewardPivot);
     }
 
     private IEnumerator _SpawnZombie()
@@ -46,15 +130,5 @@ public class GraveManager : MonoBehaviour
             Zombie.localRotation = Quaternion.Lerp(Quaternion.Euler(Vector3.right * 180), Quaternion.Euler(Vector3.zero), progress);
             yield return null;
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        
     }
 }

@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7005462828879891087}
   - component: {fileID: 6239663370767287594}
   - component: {fileID: 8174960826806514144}
+  - component: {fileID: 5130772803126920182}
   m_Layer: 7
   m_Name: Path
-  m_TagString: Untagged
+  m_TagString: Tier2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5130772803126920182
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7670676896457592885}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4814398, y: 0.028721493, z: 1.5416}
+  m_Center: {x: 0, y: 0.014360746, z: 0}
