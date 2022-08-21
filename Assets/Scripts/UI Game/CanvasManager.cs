@@ -65,6 +65,11 @@ public class CanvasManager : MonoBehaviour
         UpdateMoneyText(69);
     }
 
+    private void Update()
+    {
+        
+    }
+
     public void ShowCraftingPanel(bool _show)
     {
         CraftingPanel.gameObject.SetActive(_show);
