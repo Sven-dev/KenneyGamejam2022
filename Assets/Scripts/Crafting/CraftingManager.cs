@@ -77,8 +77,8 @@ public class CraftingManager : MonoBehaviour
                 default: break;
             }
 
-            CanvasManager.Instance.CorrectAmount(CS.AmountWood() >= woodNeeded, CS.AmountStone() >= stoneNeeded, false);
-            CanvasManager.Instance.ShowResource(woodNeeded, stoneNeeded, ironNeeded);
+            //CanvasManager.Instance.CorrectAmount(CS.AmountWood() >= woodNeeded, CS.AmountStone() >= stoneNeeded, false);
+            //CanvasManager.Instance.ShowResource(woodNeeded, stoneNeeded, ironNeeded);
             CanvasManager.Instance.SetCrafting(_index);
         }
     }

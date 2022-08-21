@@ -35,23 +35,40 @@ public class CarryManager : MonoBehaviour
     {
         if (!Carrying && Carryables.Count > 0)
         {
+            List<Transform> removeFromCarry = new List<Transform>();
+
             //Calculate which item needs to be picked up
             //For now we're doing it by checking the closest object, but it should probably also look at what object the player is looking at
             Transform closestItem = null;
             float closestDistance = Mathf.Infinity;
             foreach(Transform item in Carryables)
             {
-                float distance = Vector3.Distance(transform.position, item.position);
-                if (distance <= closestDistance)
+                if (item == null)
                 {
-                    //There's something closer
-                    closestDistance = distance;
-                    closestItem = item;
+                    removeFromCarry.Add(item);
+                }
+                else
+                {
+                    float distance = Vector3.Distance(transform.position, item.position);
+                    if (distance <= closestDistance)
+                    {
+                        //There's something closer
+                        closestDistance = distance;
+                        closestItem = item;
+                    }
                 }
             }
 
-            PickUp(closestItem);
-            print("Picked up item");
+            if (closestDistance != Mathf.Infinity)
+            {
+                PickUp(closestItem);
+                print("Picked up item");
+            }
+
+            foreach (Transform garbage in removeFromCarry)
+            {
+                Carryables.Remove(garbage);
+            }
         }
         else
         {
