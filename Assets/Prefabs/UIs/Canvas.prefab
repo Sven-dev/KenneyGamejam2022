@@ -523,7 +523,8 @@ MonoBehaviour:
   StoneGrave_Selection: {fileID: 4000126601110516486}
   Fence_Selection: {fileID: 2984236626295030302}
   Lantern_Selection: {fileID: 2800521083733859979}
-  Meta_Selection: {fileID: 784026480509232349}
+  Bench_Selection: {fileID: 784026480509232349}
+  Path_Selection: {fileID: 8712944800092058343}
 --- !u!1 &5534514492449914930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1122,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5223449998630837129, guid: cfb562a2e79a27945b60b0c26fe25c38, type: 3}
   m_PrefabInstance: {fileID: 3180859701078002414}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8712944800092058343 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6110881300519778313, guid: cfb562a2e79a27945b60b0c26fe25c38, type: 3}
+  m_PrefabInstance: {fileID: 3180859701078002414}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7971073c5bd6f46ab3d036becd5aba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5129593375206331029
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -56,6 +56,8 @@ public class CraftingStation : MonoBehaviour
         wood.parent = WoodPivot;
         wood.transform.localPosition = Vector3.zero;
         wood.transform.Translate(Vector3.up * WoodPivot.childCount * 0.25f);
+
+        CheckCraftable();
     }
     public void RemoveWood(Transform wood)
     {
@@ -63,6 +65,8 @@ public class CraftingStation : MonoBehaviour
         {
             stackedWood.Translate(Vector3.down * 0.25f);
         }
+
+        CheckCraftable();
     }
 
     private void AddStone(Transform stone)
@@ -70,6 +74,8 @@ public class CraftingStation : MonoBehaviour
         stone.parent = StonePivot;
         stone.transform.localPosition = Vector3.zero;
         stone.transform.Translate(Vector3.up * StonePivot.childCount * 0.25f);
+
+        CheckCraftable();
     }
     public void RemoveStone(Transform stone)
     {
@@ -77,6 +83,8 @@ public class CraftingStation : MonoBehaviour
         {
             stackedStone.Translate(Vector3.down * 0.25f);
         }
+
+        CheckCraftable();
     }
 
     public int AmountWood()
@@ -109,11 +117,32 @@ public class CraftingStation : MonoBehaviour
                 removal.gameObject.SetActive(false);
             }
 
+
+            CheckCraftable();
             return true;
         }
         else
         {
             return false;
+        }
+    }
+
+    private void CheckCraftable()
+    {
+        if (CraftingManager.Instance && CanvasManager.Instance)
+        {
+            bool[] recipeCraftables = new bool[6];
+
+            for (int i = 0; i < 6; i++)
+            {
+                Recipe rec = CraftingManager.Instance.GetRecipe(i);
+
+                recipeCraftables[i] = (rec.WoodCost <= AmountWood() && rec.StoneCost <= AmountStone());
+            }
+
+
+            CanvasManager.Instance.CanCraft(recipeCraftables[0], recipeCraftables[1], recipeCraftables[2],
+                recipeCraftables[3], recipeCraftables[4], recipeCraftables[5]);
         }
     }
 

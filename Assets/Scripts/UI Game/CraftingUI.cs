@@ -22,7 +22,8 @@ public class CraftingUI : MonoBehaviour
     [SerializeField] ItemSelectionUI StoneGrave_Selection;
     [SerializeField] ItemSelectionUI Fence_Selection;
     [SerializeField] ItemSelectionUI Lantern_Selection;
-    [SerializeField] ItemSelectionUI Meta_Selection;
+    [SerializeField] ItemSelectionUI Bench_Selection;
+    [SerializeField] ItemSelectionUI Path_Selection;
 
     public void SelectCrafting(int _index)
     {
@@ -64,12 +65,13 @@ public class CraftingUI : MonoBehaviour
         Metal_Selection.ChangeColour(_metal ? GoodColour: BadColour);
     }
 
-    public void UpdateCraftColours(bool _wood, bool _stone, bool _fence, bool _lantern, bool _meta)
+    public void UpdateCraftColours(bool _wood, bool _stone, bool _fence, bool _lantern, bool _bench, bool _path)
     {
         WoodGrave_Selection.ChangeColour(_wood ? GoodColour : BadColour);
         StoneGrave_Selection.ChangeColour(_stone ? GoodColour : BadColour);
         Fence_Selection.ChangeColour(_fence ? GoodColour : BadColour);
         Lantern_Selection.ChangeColour(_lantern ? GoodColour : BadColour);
-        Meta_Selection.ChangeColour(_meta ? GoodColour : BadColour);
+        Bench_Selection.ChangeColour(_bench ? GoodColour : BadColour);
+        Path_Selection.ChangeColour(_path ? GoodColour : BadColour);
     }
 }

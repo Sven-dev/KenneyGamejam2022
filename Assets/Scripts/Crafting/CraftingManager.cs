@@ -91,6 +91,17 @@ public class CraftingManager : MonoBehaviour
             return "Invalid";
         }
     }
+    public Recipe GetRecipe(int _index)
+    {
+        if (Recipes.Count >= _index)
+        {
+            return Recipes[_index];
+        }
+        else
+        {
+            return null;
+        }
+    }
 
 }
 
