@@ -25,6 +25,7 @@ public class GraveDigger : MonoBehaviour
         if (DigAllowed)
         {
             StartCoroutine(_SpawnGrave());
+            AudioManager.Instance.Play("Dig", 1f);
         }
     }
 
