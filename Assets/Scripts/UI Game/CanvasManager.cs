@@ -48,7 +48,7 @@ public class CanvasManager : MonoBehaviour
         {
             CanCraft(true, false, true, true, false);
             CorrectAmount(true, false, true);
-            ShowResource(true, true, false);
+            ShowResource(1, 1, 0);
 
             SetCrafting(2);
         }
@@ -56,7 +56,7 @@ public class CanvasManager : MonoBehaviour
         {
             CanCraft(false, false, false, false, false);
             CorrectAmount(false, false, false);
-            ShowResource(true, true, true);
+            ShowResource(0, 0, 0);
 
             SetCrafting(0);
         }
@@ -84,7 +84,7 @@ public class CanvasManager : MonoBehaviour
     {
         CraftingPanel.UpdateResourceColours(_wood, _stone, _metal);
     }
-    public void ShowResource(bool _wood, bool _stone, bool _metal)
+    public void ShowResource(int _wood, int _stone, int _metal)
     {
         CraftingPanel.UpdateResourceShowing(_wood, _stone, _metal);
     }

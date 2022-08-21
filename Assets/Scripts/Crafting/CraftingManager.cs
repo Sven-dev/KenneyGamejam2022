@@ -65,21 +65,22 @@ public class CraftingManager : MonoBehaviour
     {
         if (CanvasManager.Instance)
         {
-            bool wood = false, stone = false, iron = false;
+            Debug.Log("show?");
 
             switch (_index)
             {
-                case 0: wood = true; woodNeeded = 1; break;
-                case 1: stone = true; stoneNeeded = 1; break;
-                case 2: wood = true; woodNeeded = 2; break;
-                case 3: wood = true; woodNeeded = 2; break;
-                case 4: wood = true; woodNeeded = 1;
-                        stone = true; stoneNeeded = 1; break;
+                case 1: woodNeeded = 1; break;
+                case 2: stoneNeeded = 1; break;
+                case 3: woodNeeded = 2; break;
+                case 4: woodNeeded = 2; break;
+                case 5: woodNeeded = 2;
+                        stoneNeeded = 2; break;
                 default: break;
             }
 
             CanvasManager.Instance.CorrectAmount(CS.AmountWood() >= woodNeeded, CS.AmountStone() >= stoneNeeded, false);
-            CanvasManager.Instance.ShowResource(wood, stone, iron);
+            CanvasManager.Instance.ShowResource(woodNeeded, stoneNeeded, ironNeeded);
+            CanvasManager.Instance.SetCrafting(_index);
         }
     }
 

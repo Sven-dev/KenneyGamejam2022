@@ -38,7 +38,7 @@ public class CraftingUI : MonoBehaviour
                 case 2:     craftingType = "Stone Grave"; break;
                 case 3:     craftingType = "Wood Fence"; break;
                 case 4:     craftingType = "Lantern"; break;
-                case 5:     craftingType = "Something"; break;
+                case 5:     craftingType = "Bench"; break;
                 default:    craftingType = "Invalid"; break;
             }
 
@@ -50,11 +50,15 @@ public class CraftingUI : MonoBehaviour
         }
     }
 
-    public void UpdateResourceShowing(bool _wood, bool _stone, bool _metal)
+    public void UpdateResourceShowing(int _wood, int _stone, int _metal)
     {
-        Wood_Selection.gameObject.SetActive(_wood);
-        Stone_Selection.gameObject.SetActive(_stone);
-        Metal_Selection.gameObject.SetActive(_metal);
+        Wood_Selection.gameObject.SetActive(_wood > 0);
+        Stone_Selection.gameObject.SetActive(_stone > 0);
+        Metal_Selection.gameObject.SetActive(_metal > 0);
+
+        Wood_Selection.ChangeAmount(_wood);
+        Stone_Selection.ChangeAmount(_stone);
+        Metal_Selection.ChangeAmount(_metal);
     }
     public void UpdateResourceColours(bool _wood, bool _stone, bool _metal)
     {
