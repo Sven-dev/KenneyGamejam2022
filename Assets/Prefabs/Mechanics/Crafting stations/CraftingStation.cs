@@ -11,10 +11,8 @@ public class CraftingStation : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("player was here");
             if (CanvasManager.Instance)
             {
-                Debug.Log("canvas exists");
                 CanvasManager.Instance.ShowCraftingPanel(true);
             }
         }
@@ -79,12 +77,42 @@ public class CraftingStation : MonoBehaviour
         }
     }
 
+    public int AmountWood()
+    {
+        return WoodPivot.childCount;
+    }
+    public int AmountStone()
+    {
+        return StonePivot.childCount;
+    }
 
-    public void Craft(int _wood, int _stone)
+    public bool Craft(int index, int _wood, int _stone)
     {
         if (StonePivot.childCount >= _stone && WoodPivot.childCount >= _wood)
         {
+            Transform removal = null;
+            for (int w = 0; w < _wood; w++)
+            {
+                removal = WoodPivot.GetChild(0);
+                removal.parent = null;
+                removal.position = Vector3.down * 5.0f;
+                removal.gameObject.SetActive(false);
+            }
 
+            for (int s = 0; s < _stone; s++)
+            {
+                removal = StonePivot.GetChild(0);
+                removal.parent = null;
+                removal.position = Vector3.down * 5.0f;
+                removal.gameObject.SetActive(false);
+            }
+
+
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

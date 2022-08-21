@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93bf4cfaae7c37448beba31dee63dddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TestUI: 0
   CraftingPanel: {fileID: 1241982989}
   CoinPanel: {fileID: 5778898208323150623}
 --- !u!1 &3847203117715636767
@@ -1291,6 +1292,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1553144648296789396}
     m_Modifications:
+    - target: {fileID: 3045966661464410892, guid: cfb562a2e79a27945b60b0c26fe25c38, type: 3}
+      propertyPath: index
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5223449998630837129, guid: cfb562a2e79a27945b60b0c26fe25c38, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1377,7 +1382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6780402525307445390, guid: cfb562a2e79a27945b60b0c26fe25c38, type: 3}
       propertyPath: m_Name
-      value: Selection Stuff
+      value: Selection Bench
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfb562a2e79a27945b60b0c26fe25c38, type: 3}
@@ -1404,6 +1409,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1553144648296789396}
     m_Modifications:
+    - target: {fileID: 3045966661464410892, guid: cfb562a2e79a27945b60b0c26fe25c38, type: 3}
+      propertyPath: index
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5223449998630837129, guid: cfb562a2e79a27945b60b0c26fe25c38, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1517,6 +1526,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1553144648296789396}
     m_Modifications:
+    - target: {fileID: 3045966661464410892, guid: cfb562a2e79a27945b60b0c26fe25c38, type: 3}
+      propertyPath: index
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5223449998630837129, guid: cfb562a2e79a27945b60b0c26fe25c38, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1630,6 +1643,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1553144648296789396}
     m_Modifications:
+    - target: {fileID: 3045966661464410892, guid: cfb562a2e79a27945b60b0c26fe25c38, type: 3}
+      propertyPath: index
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5223449998630837129, guid: cfb562a2e79a27945b60b0c26fe25c38, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
