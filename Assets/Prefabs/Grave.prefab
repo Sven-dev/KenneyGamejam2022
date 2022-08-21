@@ -54,7 +54,7 @@ MonoBehaviour:
   Tier3Bonus: 0.1
   WoodPrefab: {fileID: 7188817292820368108, guid: 569578f7cd36d1240b31c97dc68c00fd, type: 3}
   StonePrefab: {fileID: 5801955011389086449, guid: 71985edd064074043b5d8f9662d49c0d, type: 3}
-  IronPrefab: {fileID: 0}
+  IronPrefab: {fileID: 6566299753359976889, guid: 97ccc51849db858488789a823ac124fe, type: 3}
   RewardPivot: {fileID: 6911605269356116054}
   Zombie: {fileID: 4481331075067798606}
   MoodLabel: {fileID: 1591713661540487360}
@@ -99,6 +99,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4481331075067798606}
     m_Modifications:
+    - target: {fileID: 320087195110250049, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.01
+      objectReference: {fileID: 0}
     - target: {fileID: 1011340962861312688, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -109,7 +113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1011340962861312688, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 1011340962861312688, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -142,6 +146,10 @@ PrefabInstance:
     - target: {fileID: 1011340962861312688, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1772477017767431228, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
+      propertyPath: m_Radius
+      value: 1.32
       objectReference: {fileID: 0}
     - target: {fileID: 3682142237577765195, guid: 5d18dddbe84586d439e243a48e5a072a, type: 3}
       propertyPath: m_Name

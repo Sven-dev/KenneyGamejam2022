@@ -13,6 +13,9 @@ public class MoodManager : MonoBehaviour
         {
             print("With player");
             MoodLabel.gameObject.SetActive(true);
+
+            AudioManager.Instance.RandomizePitch("Zombie", 1.8f, 2.1f);
+            AudioManager.Instance.PlayRandom("Zombie");
         }
     }
 
