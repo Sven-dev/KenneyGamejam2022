@@ -240,3 +240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a851d8dbacada6a4c93216b5a02d83ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Collider: {fileID: 7578356673373928528}
+  RequirementBorder: {fileID: 6866456843818239616}
+  RequirementLbl: {fileID: 7920861406257755885}
