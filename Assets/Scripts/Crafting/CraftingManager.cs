@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CraftingManager : MonoBehaviour
 {
+    [SerializeField] GameObject[] CraftRecipies = null;
+
     CraftingStation CS = null;
 
     int woodNeeded = 0;

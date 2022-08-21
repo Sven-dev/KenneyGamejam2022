@@ -9,6 +9,8 @@ public class CraftButton : MonoBehaviour
     
     public void ShowSelected()
     {
+        Debug.Log("show?");
+
         if (CraftingManager.Instance)
         {
             CraftingManager.Instance.ShowSelected(index);
@@ -16,6 +18,8 @@ public class CraftButton : MonoBehaviour
     }
     public void Selected()
     {
+        Debug.Log("select?");
+
         if (CraftingManager.Instance)
         {
             CraftingManager.Instance.Craft(index);

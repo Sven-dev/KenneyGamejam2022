@@ -11,10 +11,8 @@ public class CraftingStation : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("player was here");
             if (CanvasManager.Instance)
             {
-                Debug.Log("canvas exists");
                 CanvasManager.Instance.ShowCraftingPanel(true);
             }
         }
