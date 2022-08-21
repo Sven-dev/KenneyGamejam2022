@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MoodManager : MonoBehaviour
+{
+    [SerializeField] private SpriteRenderer MoodLabel;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        print("collided");
+        if (other.tag == "Player")
+        {
+            print("With player");
+            MoodLabel.gameObject.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            MoodLabel.gameObject.SetActive(false);
+        }
+    }
+}
