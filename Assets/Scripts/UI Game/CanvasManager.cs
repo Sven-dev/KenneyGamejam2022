@@ -46,7 +46,7 @@ public class CanvasManager : MonoBehaviour
     {
         if (TestUI)
         {
-            CanCraft(true, false, true, true, false);
+            CanCraft(true, false, true, true, false, false);
             CorrectAmount(true, false, true);
             ShowResource(1, 1, 0);
 
@@ -54,7 +54,7 @@ public class CanvasManager : MonoBehaviour
         }
         else
         {
-            CanCraft(false, false, false, false, false);
+            CanCraft(false, false, false, false, false, false);
             CorrectAmount(false, false, false);
             ShowResource(0, 0, 0);
 
@@ -80,9 +80,9 @@ public class CanvasManager : MonoBehaviour
         CraftingPanel.SelectCrafting(_index);
     }
 
-    public void CanCraft(bool _wood, bool _stone, bool _fence, bool _lantern, bool _metal)
+    public void CanCraft(bool _wood, bool _stone, bool _fence, bool _lantern, bool _bench, bool _path)
     {
-        CraftingPanel.UpdateCraftColours(_wood, _stone, _fence, _lantern, _metal);
+        CraftingPanel.UpdateCraftColours(_wood, _stone, _fence, _lantern, _bench, _path);
     }
 
     public void CorrectAmount(bool _wood, bool _stone, bool _metal)
