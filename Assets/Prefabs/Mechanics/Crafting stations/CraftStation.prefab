@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 1524790428953667643}
   - component: {fileID: 232456700}
   - component: {fileID: 232456701}
+  - component: {fileID: 4206262751273888434}
   m_Layer: 6
   m_Name: CraftStation
   m_TagString: Untagged
@@ -124,6 +125,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WoodPivot: {fileID: 1426489557}
   StonePivot: {fileID: 1456503311}
+--- !u!114 &4206262751273888434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6078290407451774032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dc0c92b654d6634b97535a881613c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CraftRecipies:
+  - {fileID: 7984956064950572863, guid: 3ee815e6f9bb73c478733be703192085, type: 3}
+  - {fileID: 5929363131760973724, guid: 25f5a155f0b5e054ab6b7912eba792d4, type: 3}
+  - {fileID: 7970548844674877285, guid: 15039f950c369dc4abccd466b3b51867, type: 3}
+  - {fileID: 853690227778846053, guid: 8f35b289e4be302458699f2a65bea743, type: 3}
+  - {fileID: 7220581362089234670, guid: bf8d932b920e19048b89eca66f443b3f, type: 3}
 --- !u!1001 &1413270748215912973
 PrefabInstance:
   m_ObjectHideFlags: 0

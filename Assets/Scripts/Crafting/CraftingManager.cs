@@ -64,10 +64,22 @@ public class CraftingManager : MonoBehaviour
     {
         if (CanvasManager.Instance)
         {
-            Recipe recipe = Recipes[_index];
+            Debug.Log("show?");
 
-            CanvasManager.Instance.CorrectAmount(CraftingStation.AmountWood() >= recipe.WoodCost, CraftingStation.AmountStone() >= recipe.StoneCost, false);
-            CanvasManager.Instance.ShowResource(recipe.WoodCost > 0, recipe.StoneCost > 0, false);
+            switch (_index)
+            {
+                case 1: woodNeeded = 1; break;
+                case 2: stoneNeeded = 1; break;
+                case 3: woodNeeded = 2; break;
+                case 4: woodNeeded = 2; break;
+                case 5: woodNeeded = 2;
+                        stoneNeeded = 2; break;
+                default: break;
+            }
+
+            CanvasManager.Instance.CorrectAmount(CS.AmountWood() >= woodNeeded, CS.AmountStone() >= stoneNeeded, false);
+            CanvasManager.Instance.ShowResource(woodNeeded, stoneNeeded, ironNeeded);
+            CanvasManager.Instance.SetCrafting(_index);
         }
     }
 
