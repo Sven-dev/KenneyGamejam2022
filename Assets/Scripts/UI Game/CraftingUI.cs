@@ -31,16 +31,13 @@ public class CraftingUI : MonoBehaviour
             if (!Select_Panel.activeInHierarchy)
                 Select_Panel.SetActive(true);
 
-            string craftingType = "";
-            switch (_index)
+            string craftingType = "UNKNOWN";
+
+            if (CraftingManager.Instance)
             {
-                case 1:     craftingType = "Wood Grave"; break;
-                case 2:     craftingType = "Stone Grave"; break;
-                case 3:     craftingType = "Wood Fence"; break;
-                case 4:     craftingType = "Lantern"; break;
-                case 5:     craftingType = "Bench"; break;
-                default:    craftingType = "Invalid"; break;
+                craftingType = CraftingManager.Instance.GetRecipeName(_index);
             }
+
 
             Selection_Text.text = craftingType;
         }

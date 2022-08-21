@@ -10,6 +10,7 @@ public class CraftingManager : MonoBehaviour
     
     int woodNeeded = 0;
     int stoneNeeded = 0;
+    int ironNeeded = 0;
 
     #region Instance
     //put instance stuff here
@@ -49,13 +50,12 @@ public class CraftingManager : MonoBehaviour
 
     public void Craft(int _index)
     {
-        if (CraftingStation != null)
+        if (CraftingStation != null && Recipes.Count >= _index)
         {
             if (CraftingStation.Craft(_index, woodNeeded, stoneNeeded))
             {
-                //Summon item here
-                Debug.Log("it works?");
-
+                Transform craftedItem = Instantiate(Recipes[_index -1].Prefab);
+                craftedItem.position = CraftingStation.DropPosition();
             }
         }
     }
@@ -66,20 +66,29 @@ public class CraftingManager : MonoBehaviour
         {
             Debug.Log("show?");
 
-            switch (_index)
+            if (Recipes.Count >= _index)
             {
-                case 1: woodNeeded = 1; break;
-                case 2: stoneNeeded = 1; break;
-                case 3: woodNeeded = 2; break;
-                case 4: woodNeeded = 2; break;
-                case 5: woodNeeded = 2;
-                        stoneNeeded = 2; break;
-                default: break;
-            }
+                Recipe recipe = Recipes[_index - 1];
 
-            //CanvasManager.Instance.CorrectAmount(CS.AmountWood() >= woodNeeded, CS.AmountStone() >= stoneNeeded, false);
-            //CanvasManager.Instance.ShowResource(woodNeeded, stoneNeeded, ironNeeded);
-            CanvasManager.Instance.SetCrafting(_index);
+                woodNeeded = recipe.WoodCost;
+                stoneNeeded = recipe.StoneCost;
+
+                CanvasManager.Instance.CorrectAmount(CraftingStation.AmountWood() >= woodNeeded, CraftingStation.AmountStone() >= stoneNeeded, false);
+                CanvasManager.Instance.ShowResource(woodNeeded, stoneNeeded, ironNeeded);
+                CanvasManager.Instance.SetCrafting(_index);
+            }
+        }
+    }
+
+    public string GetRecipeName(int _index)
+    {
+        if (Recipes.Count >= _index)
+        {
+            return Recipes[_index - 1].Name;
+        }
+        else
+        {
+            return "Invalid";
         }
     }
 
