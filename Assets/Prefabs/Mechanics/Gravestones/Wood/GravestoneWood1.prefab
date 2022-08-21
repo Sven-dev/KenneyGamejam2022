@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7931472971818965343}
   m_Layer: 7
   m_Name: GravestoneWood1
-  m_TagString: Untagged
+  m_TagString: Tier1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

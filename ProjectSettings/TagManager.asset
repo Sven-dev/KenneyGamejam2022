@@ -8,6 +8,10 @@ TagManager:
   - Stone
   - Iron
   - Shovel
+  - Broken
+  - Tier1
+  - Tier2
+  - Tier3
   layers:
   - Default
   - TransparentFX

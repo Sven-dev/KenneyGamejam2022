@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 8191679719227708846}
   m_Layer: 7
   m_Name: WoodFence1
-  m_TagString: Untagged
+  m_TagString: Tier2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

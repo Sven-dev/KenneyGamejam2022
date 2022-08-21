@@ -31,6 +31,7 @@ Transform:
   - {fileID: 1667215769278585720}
   - {fileID: 1667215769846782796}
   - {fileID: 4481331075067798606}
+  - {fileID: 6911605269356116054}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46,7 +47,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a87d42dcc6630b47b80ef6322a23deb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnvironmentRange: 5
+  MaterialPenalty: 0.025
+  BrokenPenalty: 0.1
+  Tier2Bonus: 0.025
+  Tier3Bonus: 0.1
+  WoodPrefab: {fileID: 7188817292820368108, guid: 569578f7cd36d1240b31c97dc68c00fd, type: 3}
+  StonePrefab: {fileID: 5801955011389086449, guid: 71985edd064074043b5d8f9662d49c0d, type: 3}
+  IronPrefab: {fileID: 0}
+  RewardPivot: {fileID: 6911605269356116054}
   Zombie: {fileID: 4481331075067798606}
+--- !u!1 &3476188962495055805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6911605269356116054}
+  m_Layer: 0
+  m_Name: RewardPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6911605269356116054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476188962495055805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6481352140122453760}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1058460802250690473
 PrefabInstance:
   m_ObjectHideFlags: 0
