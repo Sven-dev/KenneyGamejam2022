@@ -4433,6 +4433,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3847203117715636767, guid: ab15a2936a742ba4bbe53f49be97b09b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9169576263411759641, guid: ab15a2936a742ba4bbe53f49be97b09b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -6711,6 +6715,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 60a08cfe7438aae44aeb68c715bf4050, type: 3}
   m_PrefabInstance: {fileID: 1439195984}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1455348056 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 232456701, guid: 3b70212fb51e08840afd73bd4edf28fd, type: 3}
+  m_PrefabInstance: {fileID: 232456697}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c64ce65a0d5a047b7b197601ceada1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1456363453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7972,12 +7987,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc0c92b654d6634b97535a881613c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CraftRecipies:
-  - {fileID: 7984956064950572863, guid: 3ee815e6f9bb73c478733be703192085, type: 3}
-  - {fileID: 5929363131760973724, guid: 25f5a155f0b5e054ab6b7912eba792d4, type: 3}
-  - {fileID: 7970548844674877285, guid: 15039f950c369dc4abccd466b3b51867, type: 3}
-  - {fileID: 853690227778846053, guid: 8f35b289e4be302458699f2a65bea743, type: 3}
-  - {fileID: 7220581362089234670, guid: bf8d932b920e19048b89eca66f443b3f, type: 3}
+  Recipes:
+  - Name: Wooden Gravestone
+    WoodCost: 2
+    StoneCost: 0
+    Prefab: {fileID: 7984956064950572856, guid: 3ee815e6f9bb73c478733be703192085, type: 3}
+  - Name: Stone Gravestone
+    WoodCost: 0
+    StoneCost: 2
+    Prefab: {fileID: 6413835015558876454, guid: 25f5a155f0b5e054ab6b7912eba792d4, type: 3}
+  - Name: Wooden fence
+    WoodCost: 1
+    StoneCost: 0
+    Prefab: {fileID: 7338267448607464927, guid: 15039f950c369dc4abccd466b3b51867, type: 3}
+  - Name: Campfire
+    WoodCost: 1
+    StoneCost: 0
+    Prefab: {fileID: 41440669155895263, guid: 8f35b289e4be302458699f2a65bea743, type: 3}
+  - Name: Bench
+    WoodCost: 2
+    StoneCost: 2
+    Prefab: {fileID: 8034273105965926996, guid: bf8d932b920e19048b89eca66f443b3f, type: 3}
+  CraftingStation: {fileID: 1455348056}
 --- !u!4 &1597572496
 Transform:
   m_ObjectHideFlags: 0

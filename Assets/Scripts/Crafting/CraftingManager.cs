@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class CraftingManager : MonoBehaviour
 {
-    [SerializeField] GameObject[] CraftRecipies = null;
-
-    CraftingStation CS = null;
-
+    [SerializeField] private List<Recipe> Recipes;
+    [Space]
+    [SerializeField] private CraftingStation CraftingStation;
+    
     int woodNeeded = 0;
     int stoneNeeded = 0;
-    int ironNeeded = 0;
 
     #region Instance
     //put instance stuff here
@@ -44,15 +43,15 @@ public class CraftingManager : MonoBehaviour
 
     private void Start()
     {
-        CS = GetComponent<CraftingStation>();
+        CraftingStation = GetComponent<CraftingStation>();
 
     }
 
     public void Craft(int _index)
     {
-        if (CS != null)
+        if (CraftingStation != null)
         {
-            if (CS.Craft(_index, woodNeeded, stoneNeeded))
+            if (CraftingStation.Craft(_index, woodNeeded, stoneNeeded))
             {
                 //Summon item here
                 Debug.Log("it works?");
@@ -65,22 +64,22 @@ public class CraftingManager : MonoBehaviour
     {
         if (CanvasManager.Instance)
         {
-            bool wood = false, stone = false, iron = false;
+            Recipe recipe = Recipes[_index];
 
-            switch (_index)
-            {
-                case 0: wood = true; woodNeeded = 1; break;
-                case 1: stone = true; stoneNeeded = 1; break;
-                case 2: wood = true; woodNeeded = 2; break;
-                case 3: wood = true; woodNeeded = 2; break;
-                case 4: wood = true; woodNeeded = 1;
-                        stone = true; stoneNeeded = 1; break;
-                default: break;
-            }
-
-            CanvasManager.Instance.CorrectAmount(CS.AmountWood() >= woodNeeded, CS.AmountStone() >= stoneNeeded, false);
-            CanvasManager.Instance.ShowResource(wood, stone, iron);
+            CanvasManager.Instance.CorrectAmount(CraftingStation.AmountWood() >= recipe.WoodCost, CraftingStation.AmountStone() >= recipe.StoneCost, false);
+            CanvasManager.Instance.ShowResource(recipe.WoodCost > 0, recipe.StoneCost > 0, false);
         }
     }
 
+}
+
+[System.Serializable]
+public class Recipe
+{
+    public string Name;
+    [Space]
+    public int WoodCost = 0;
+    public int StoneCost = 0;
+    [Space]
+    public Transform Prefab;
 }
