@@ -109,9 +109,17 @@ PrefabInstance:
       value: Upgrader
       objectReference: {fileID: 0}
     - target: {fileID: 5998159845043135855, guid: 4d4c88cb1baabd342b1e3dc1f1319bce, type: 3}
+      propertyPath: UpgradeTag
+      value: Iron
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998159845043135855, guid: 4d4c88cb1baabd342b1e3dc1f1319bce, type: 3}
       propertyPath: UpgradesTo
       value: 
       objectReference: {fileID: 2405919013963779810, guid: fb41edf7a5cbafa458f7d03e0476b7e5, type: 3}
+    - target: {fileID: 7920861406257755885, guid: 4d4c88cb1baabd342b1e3dc1f1319bce, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7652870790b5e964aaff5bee9678d8f5, type: 3}
     - target: {fileID: 9204126690637109980, guid: 4d4c88cb1baabd342b1e3dc1f1319bce, type: 3}
       propertyPath: m_RootOrder
       value: 0

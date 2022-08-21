@@ -117,6 +117,10 @@ PrefabInstance:
       propertyPath: UpgradesTo
       value: 
       objectReference: {fileID: 3475880421764165378, guid: 44803edafc4b72a45970ca1daa4e3c1e, type: 3}
+    - target: {fileID: 7920861406257755885, guid: 4d4c88cb1baabd342b1e3dc1f1319bce, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7652870790b5e964aaff5bee9678d8f5, type: 3}
     - target: {fileID: 9204126690637109980, guid: 4d4c88cb1baabd342b1e3dc1f1319bce, type: 3}
       propertyPath: m_RootOrder
       value: 0

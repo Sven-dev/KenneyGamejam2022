@@ -62,6 +62,7 @@ public class CarryManager : MonoBehaviour
             if (closestDistance != Mathf.Infinity)
             {
                 PickUp(closestItem);
+                AudioManager.Instance.Play("PickUp");
                 print("Picked up item");
             }
 
@@ -74,6 +75,7 @@ public class CarryManager : MonoBehaviour
         {
             Drop();
             print("Dropped item");
+            AudioManager.Instance.Play("PutDown");
         }      
     }
 
